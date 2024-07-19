@@ -11,64 +11,84 @@ body {
 
 #app {
     text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     color: #333;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
-    margin-top: 10px;
     margin-bottom: 5px;
 }
 
 input {
-    padding: 5px;
-    width: 300px;
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
 }
 
 button {
-    padding: 8px;
-    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #69b3a2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5a9c8c;
 }
 
 #treeContainer {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .node {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: #69b3a2;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    margin: 5px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.node:hover {
+    transform: scale(1.1);
+}
+
+.subtree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
 }
 
-.arrow {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
+.subtree.left {
+    margin-right: 20px;
 }
 
-.arrow-left {
-    border-width: 15px 0 15px 26px;
-    border-color: transparent transparent transparent #69b3a2;
-    left: -25px;
-    top: 7.5px;
-}
-
-.arrow-right {
-    border-width: 15px 26px 15px 0;
-    border-color: transparent #69b3a2 transparent transparent;
-    right: -25px;
-    top: 7.5px;
+.subtree.right {
+    margin-left: 20px;
 }
