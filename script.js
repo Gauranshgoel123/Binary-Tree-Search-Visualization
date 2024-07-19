@@ -59,20 +59,24 @@ function displayTree(node, container) {
         nodeElement.className = 'node';
         nodeElement.textContent = node.value;
 
-        container.appendChild(nodeElement);
+        const childrenContainer = document.createElement('div');
+        childrenContainer.className = 'children';
 
         if (node.left) {
             const leftContainer = document.createElement('div');
-            leftContainer.className = 'subtree left';
-            container.appendChild(leftContainer);
+            leftContainer.className = 'left';
             displayTree(node.left, leftContainer);
+            childrenContainer.appendChild(leftContainer);
         }
 
         if (node.right) {
             const rightContainer = document.createElement('div');
-            rightContainer.className = 'subtree right';
-            container.appendChild(rightContainer);
+            rightContainer.className = 'right';
             displayTree(node.right, rightContainer);
+            childrenContainer.appendChild(rightContainer);
         }
+
+        nodeElement.appendChild(childrenContainer);
+        container.appendChild(nodeElement);
     }
 }
