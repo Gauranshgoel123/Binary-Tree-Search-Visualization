@@ -9,9 +9,11 @@
 <body>
     <div id="app">
         <h1>Binary Search Tree Visualization</h1>
-        <label for="inputNumbers">Enter numbers (comma-separated):</label>
-        <input type="text" id="inputNumbers" placeholder="e.g., 5, 3, 7, 2, 4, 6, 8">
-        <button onclick="buildTree()">Build Tree</button>
+        <div class="input-container">
+            <label for="inputNumbers">Enter numbers (comma-separated):</label>
+            <input type="text" id="inputNumbers" placeholder="e.g., 5, 3, 7, 2, 4, 6, 8">
+            <button onclick="buildTree()">Build Tree</button>
+        </div>
         <div id="treeContainer"></div>
     </div>
     <script src="script.js"></script>
