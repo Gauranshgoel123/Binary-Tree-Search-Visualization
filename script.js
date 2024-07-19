@@ -62,17 +62,17 @@ function displayTree(node, container) {
         container.appendChild(nodeElement);
 
         if (node.left) {
-            const arrowLeft = document.createElement('div');
-            arrowLeft.className = 'arrow arrow-left';
-            container.appendChild(arrowLeft);
-            displayTree(node.left, container);
+            const leftContainer = document.createElement('div');
+            leftContainer.className = 'subtree left';
+            container.appendChild(leftContainer);
+            displayTree(node.left, leftContainer);
         }
 
         if (node.right) {
-            const arrowRight = document.createElement('div');
-            arrowRight.className = 'arrow arrow-right';
-            container.appendChild(arrowRight);
-            displayTree(node.right, container);
+            const rightContainer = document.createElement('div');
+            rightContainer.className = 'subtree right';
+            container.appendChild(rightContainer);
+            displayTree(node.right, rightContainer);
         }
     }
 }
