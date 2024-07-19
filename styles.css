@@ -56,18 +56,20 @@ button:hover {
 #treeContainer {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
     margin-top: 20px;
 }
 
 .node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
     background-color: #69b3a2;
     color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border-radius: 50%;
     margin: 5px;
     position: relative;
@@ -78,17 +80,47 @@ button:hover {
     transform: scale(1.1);
 }
 
-.subtree {
+.children {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.subtree.left {
-    margin-right: 20px;
+.left, .right {
+    margin: 0 10px;
 }
 
-.subtree.right {
-    margin-left: 20px;
+.left::before, .right::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: #69b3a2;
+}
+
+.left::before {
+    left: 50%;
+    top: -20px;
+}
+
+.right::before {
+    right: 50%;
+    top: -20px;
+}
+
+.left::after, .right::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #69b3a2;
+    top: -2px;
+}
+
+.left::after {
+    left: 50%;
+}
+
+.right::after {
+    right: 50%;
 }
